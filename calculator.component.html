@@ -1,0 +1,82 @@
+<div class="container mt-5 mb-5 d-flex justify-content-center" *ngIf="!isShow">
+  <div class="card px-1 py-4">
+    <div class="card-body bg-secondary">
+      <h6 class="card-title mb-3 ">Eligibility Calculator</h6>
+
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="form-group">
+            <!-- <label for="name">Name</label> --> <input class="form-control" type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" [(ngModel)]="monthlyincome" placeholder="Monthly Income">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="form-group">
+            <div class="input-group"> <input class="form-control" type="text" placeholder="Eligibility Money" readonly [(ngModel)]="emi"> </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-6">
+          <button type="button" class="btn btn-primary" (click)="emiCal()">Calculate</button>
+
+        </div>
+
+        <div class="col-6">
+          <button type="button" class="btn btn-primary" (click)="goToEmiCal()">Go To EMI CALCULATOR</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-5 mb-5 d-flex justify-content-center" *ngIf="isShow">
+  <div class="card px-1 py-4">
+    <div class="card-body bg-secondary">
+      <h6 class="card-title mb-3">EMI Calculator</h6>
+
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="form-group">
+            <!-- <label for="name">Name</label> --> <input class="form-control" type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" [(ngModel)]="loan" placeholder="Loan">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="form-group">
+            <div class="input-group"> <input class="form-control" type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" [(ngModel)]="mnts" placeholder="months in emi"> </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="form-group">
+            <div class="input-group"> <input class="form-control" type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" [(ngModel)]="roi" placeholder="Rate of intrest "> </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="form-group">
+            <div class="input-group"> <input class="form-control" type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="Eligibility Money" readonly [(ngModel)]="loanemi"> </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-12">
+          <button type="button" class="btn btn-primary" (click)="emiBtnShow()">Calculate</button>
+        </div>
+      </div>
+      <div class="row" *ngIf="isBtnShow">
+        <div class="col-sm-12">
+          <div class="form-group">
+            <div class="input-group"> <input class="form-control" type="text" placeholder="EMI " readonly> </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
